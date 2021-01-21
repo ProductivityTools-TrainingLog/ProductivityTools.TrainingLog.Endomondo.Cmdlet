@@ -8,9 +8,15 @@ namespace ProductivityTools.TrainingLog.Endomondo.ImportTrainings
     [Cmdlet("Import", "Trainings")]
     public class ImportTrainingsCmdlet: PSCmdlet.PSCmdletPT
     {
+
+        [Parameter]
+        public string Path { get; set; }
+
         protected override void ProcessRecord()
         {
             Console.WriteLine("Hello");
+            App application = new App(this.Path);
+            application.Import();
             base.ProcessRecord();
         }
     }
