@@ -67,11 +67,22 @@ namespace ProductivityTools.TrainingLog.Endomondo
                     item.Pictures = pictures;
                     item.GPX = points;
                     trainings.Add(item);
+
+                    
+
                     yield return item;
                     Console.WriteLine($"{item.name}");
                 }
             }
             // return trainings;
+        }
+
+        private void LoadPictures(EndoMondoTraining training)
+        {
+            foreach(var picture in training.Pictures)
+            {
+
+            }
         }
     }
 }

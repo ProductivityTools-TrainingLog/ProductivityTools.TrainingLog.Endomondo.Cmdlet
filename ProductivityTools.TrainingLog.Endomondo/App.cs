@@ -37,7 +37,8 @@ namespace ProductivityTools.TrainingLog.Endomondo
             training.Sport = endomondoTraining.sport;
 
             //training.Description = endomondoTraining.name;
-            training.Duration = TimeSpan.FromSeconds(endomondoTraining.duration_s);
+            training.Source = endomondoTraining.source;
+            training.Duration = (int)endomondoTraining.duration_s;
             training.Start = DateTime.Parse(endomondoTraining.start_time);
             training.End = DateTime.Parse(endomondoTraining.end_time);
             training.Distance = endomondoTraining.distance_km * 1000;
