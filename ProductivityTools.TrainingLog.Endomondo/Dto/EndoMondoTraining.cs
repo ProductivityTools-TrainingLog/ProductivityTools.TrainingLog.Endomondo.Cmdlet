@@ -13,11 +13,12 @@ namespace ProductivityTools.TrainingLog.Endomondo.Dto
         public string start_time { get; set; }
         public string end_time { get; set; }
         public float duration_s { get; set; }
-        public float distance_km { get; set; }
-        public float calories_kcal { get; set; }
-        public float speed_avg_kmh { get; set; }
+        public decimal distance_km { get; set; }
+        public decimal calories_kcal { get; set; }
+        public decimal speed_avg_kmh { get; set; }
 
-        public List<string> Pictures { get; set; }
+        public List<string> PicturesLinks { get; set; }
+        public List<byte[]> Pictures { get; set; }
         public bool GPX { get; set; }
     }
 }

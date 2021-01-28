@@ -21,7 +21,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
         public IEnumerable<EndoMondoTraining> GetEndomondoTrainings()
         {
             List<EndoMondoTraining> trainings = new List<EndoMondoTraining>();
-            var files = Directory.GetFiles(this.Path, "*.json");
+            var files = Directory.GetFiles(System.IO.Path.Combine(Path, "Workouts"), "*.json");
             foreach (var file in files)
             {
                 List<string> pictures = new List<string>();
@@ -64,11 +64,11 @@ namespace ProductivityTools.TrainingLog.Endomondo
                     json = json.Replace("]", "}");
 
                     var item = JsonConvert.DeserializeObject<EndoMondoTraining>(json);
-                    item.Pictures = pictures;
+                    item.PicturesLinks = pictures;
                     item.GPX = points;
                     trainings.Add(item);
 
-                    
+                    LoadPictures(item);
 
                     yield return item;
                     Console.WriteLine($"{item.name}");
@@ -79,9 +79,12 @@ namespace ProductivityTools.TrainingLog.Endomondo
 
         private void LoadPictures(EndoMondoTraining training)
         {
-            foreach(var picture in training.Pictures)
+            training.Pictures = new List<byte[]>();
+            foreach(var picture in training.PicturesLinks)
             {
-
+                string path = System.IO.Path.Combine(this.Path, picture);
+                byte[] bytes = File.ReadAllBytes(path);
+                training.Pictures.Add(bytes);
             }
         }
     }

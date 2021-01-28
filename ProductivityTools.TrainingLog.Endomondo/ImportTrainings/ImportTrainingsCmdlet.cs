@@ -12,10 +12,13 @@ namespace ProductivityTools.TrainingLog.Endomondo.ImportTrainings
         [Parameter]
         public string Path { get; set; }
 
+        [Parameter]
+        public string Account { get; set; }
+
         protected override void ProcessRecord()
         {
             Console.WriteLine("Hello");
-            App application = new App(this.Path);
+            App application = new App(this.Path, this.Account);
             application.Import();
             base.ProcessRecord();
         }
