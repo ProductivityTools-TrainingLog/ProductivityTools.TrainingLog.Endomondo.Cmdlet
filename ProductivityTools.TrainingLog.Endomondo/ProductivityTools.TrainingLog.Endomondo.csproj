@@ -9,7 +9,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.1" />
     <PackageReference Include="ProductivityTools.SimpleHttpPostClient" Version="2.0.2" />
-    <PackageReference Include="ProductivityTools.TrainingLog.Contract" Version="0.0.8" />
+    <PackageReference Include="ProductivityTools.TrainingLog.Contract" Version="0.0.10" />
   </ItemGroup>
 
 </Project>

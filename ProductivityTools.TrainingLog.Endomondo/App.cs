@@ -62,7 +62,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
             training.AverageSpeed = endomondoTraining.speed_avg_kmh;
             //string s = @"c:\Users\pwujczyk\Desktop\Pamela.jpg";
             //byte[] bytes = File.ReadAllBytes(s);
-
+            training.Pictures = endomondoTraining.Pictures;
             return training;
         }
 
