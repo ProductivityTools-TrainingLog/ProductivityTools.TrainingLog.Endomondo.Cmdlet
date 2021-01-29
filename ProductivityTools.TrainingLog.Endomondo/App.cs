@@ -45,7 +45,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
             training.Source = endomondoTraining.source;
             if (training.Source==null)
             {
-                if (endomondoTraining.GPX)
+                if (endomondoTraining.Gpx!=null)
                 {
                     training.Source = "Imported";
                 }
@@ -63,6 +63,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
             //string s = @"c:\Users\pwujczyk\Desktop\Pamela.jpg";
             //byte[] bytes = File.ReadAllBytes(s);
             training.Pictures = endomondoTraining.Pictures;
+            training.Gpx = endomondoTraining.Gpx;
             return training;
         }
 

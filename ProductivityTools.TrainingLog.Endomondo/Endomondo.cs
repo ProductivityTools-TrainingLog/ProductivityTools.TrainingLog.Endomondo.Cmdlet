@@ -30,6 +30,12 @@ namespace ProductivityTools.TrainingLog.Endomondo
                 {
                     string json = r.ReadToEnd();
 
+                    if (json.Contains("points"))
+                    {
+                        int picturesplace = json.IndexOf("points");
+                        json = json.Substring(0, picturesplace - 2) + "]";
+                        points = true;
+                    }
                     if (json.Contains("pictures"))
                     {
                         int picturesplace = json.IndexOf("pictures");
@@ -51,13 +57,6 @@ namespace ProductivityTools.TrainingLog.Endomondo
 
                     }
 
-                    if (json.Contains("points"))
-                    {
-                        int picturesplace = json.IndexOf("points");
-                        json = json.Substring(0, picturesplace - 2) + "]";
-                        points = true;
-                    }
-
                     json = json.Replace("{", "");
                     json = json.Replace("}", "");
                     json = json.Replace("[", "{");
@@ -65,10 +64,15 @@ namespace ProductivityTools.TrainingLog.Endomondo
 
                     var item = JsonConvert.DeserializeObject<EndoMondoTraining>(json);
                     item.PicturesLinks = pictures;
-                    item.GPX = points;
                     trainings.Add(item);
 
                     LoadPictures(item);
+                    if(points)
+                    {
+                        Console.WriteLine("Fdsa");
+                        byte[] bytes = File.ReadAllBytes(file.Replace("json","gpx"));
+                        item.Gpx = bytes;
+                    }
 
                     yield return item;
                     Console.WriteLine($"{item.name}");

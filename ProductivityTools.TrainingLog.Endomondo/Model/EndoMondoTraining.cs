@@ -19,6 +19,6 @@ namespace ProductivityTools.TrainingLog.Endomondo.Dto
 
         public List<string> PicturesLinks { get; set; }
         public List<byte[]> Pictures { get; set; }
-        public bool GPX { get; set; }
+        public byte[] Gpx { get; set; }
     }
 }
