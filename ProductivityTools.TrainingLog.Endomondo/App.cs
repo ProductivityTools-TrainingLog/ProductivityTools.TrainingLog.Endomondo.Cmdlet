@@ -25,7 +25,6 @@ namespace ProductivityTools.TrainingLog.Endomondo
 
         public void Import()
         {
-            //List<EndoMondoTraining> endomondoTrainings = GetEndomondoTrainings();
             foreach (var endomondoTraining in this.Endomondo.GetEndomondoTrainings())
             {
                 Training training = MapTraining(endomondoTraining);
@@ -60,8 +59,6 @@ namespace ProductivityTools.TrainingLog.Endomondo
             training.Distance = endomondoTraining.distance_km;
             training.Calories = endomondoTraining.calories_kcal;
             training.AverageSpeed = endomondoTraining.speed_avg_kmh;
-            //string s = @"c:\Users\pwujczyk\Desktop\Pamela.jpg";
-            //byte[] bytes = File.ReadAllBytes(s);
             training.Pictures = endomondoTraining.Pictures;
             training.Gpx = endomondoTraining.Gpx;
             return training;
@@ -115,7 +112,6 @@ namespace ProductivityTools.TrainingLog.Endomondo
             return r;
         }
 
-
         private void PostTraining(Training training)
         {
             HttpPostClient client = new HttpPostClient(true);
@@ -124,6 +120,5 @@ namespace ProductivityTools.TrainingLog.Endomondo
             var result2 = client.PostAsync<object>("Training", "Add", training).Result;
             Console.WriteLine(result2);
         }
-
     }
 }

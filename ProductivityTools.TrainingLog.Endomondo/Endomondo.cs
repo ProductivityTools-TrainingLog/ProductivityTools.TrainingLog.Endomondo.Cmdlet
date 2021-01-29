@@ -78,7 +78,6 @@ namespace ProductivityTools.TrainingLog.Endomondo
                     Console.WriteLine($"{item.name}");
                 }
             }
-            // return trainings;
         }
 
         private void LoadPictures(EndoMondoTraining training)

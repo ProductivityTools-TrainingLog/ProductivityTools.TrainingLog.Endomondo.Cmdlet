@@ -5,10 +5,9 @@ using System.Text;
 
 namespace ProductivityTools.TrainingLog.Endomondo.ImportTrainings
 {
-    [Cmdlet("Import", "Trainings")]
+    [Cmdlet("Import", "EndomondoTrainingsToTrainingLog")]
     public class ImportTrainingsCmdlet: PSCmdlet.PSCmdletPT
     {
-
         [Parameter]
         public string Path { get; set; }
 
@@ -17,7 +16,7 @@ namespace ProductivityTools.TrainingLog.Endomondo.ImportTrainings
 
         protected override void ProcessRecord()
         {
-            Console.WriteLine("Hello");
+            WriteVerbose("Hello! Let us get to work!");
             App application = new App(this.Path, this.Account);
             application.Import();
             base.ProcessRecord();
