@@ -6,6 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ProductivityTools.TrainingLog.Endomondo.psd1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ProductivityTools.TrainingLog.Endomondo.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.1" />
     <PackageReference Include="ProductivityTools.SimpleHttpPostClient" Version="2.0.2" />

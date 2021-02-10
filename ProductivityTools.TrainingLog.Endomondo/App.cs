@@ -10,16 +10,17 @@ namespace ProductivityTools.TrainingLog.Endomondo
 {
     public class App
     {
-
         Endomondo Endomondo;
 
         public string Path { get; set; }
         private string Account { get; set; }
+        public string TrainingLogApiAddress { get; }
 
-        public App(string path, string account)
+        public App(string path, string account, string trainingLogApiAddress)
         {
             this.Path = path;
             this.Account = account;
+            this.TrainingLogApiAddress = trainingLogApiAddress;
             this.Endomondo = new Endomondo(this.Path);
         }
 
@@ -115,7 +116,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
         private void PostTraining(Training training)
         {
             HttpPostClient client = new HttpPostClient(true);
-            client.SetBaseUrl("https://localhost:5001");
+            client.SetBaseUrl(this.TrainingLogApiAddress);
 
             var result2 = client.PostAsync<object>("Training", "Add", training).Result;
             Console.WriteLine(result2);
