@@ -32,8 +32,8 @@ namespace ProductivityTools.TrainingLog.Endomondo
 
                     if (json.Contains("points"))
                     {
-                        int picturesplace = json.IndexOf("points");
-                        json = json.Substring(0, picturesplace - 2) + "]";
+                        int pointsplace = json.IndexOf("points");
+                        json = json.Substring(0, pointsplace - 2) + "]";
                         points = true;
                     }
                     if (json.Contains("pictures"))
@@ -69,7 +69,7 @@ namespace ProductivityTools.TrainingLog.Endomondo
                     LoadPictures(item);
                     if(points)
                     {
-                        Console.WriteLine("Fdsa");
+                        Console.WriteLine("Loading points");
                         byte[] bytes = File.ReadAllBytes(file.Replace("json","gpx"));
                         item.Gpx = bytes;
                     }

@@ -11,18 +11,13 @@
 </p>
 
 
-# Convert TCX to GPX
+# TrainingLog Endomondo Cmdlet
 
-Module performs bulk conversion from TCX files to GPX files. 
 <!--more-->
-Module was created to help move sport activities from Endomondo to another portal. It takes directory with TCX files and convert every file to GPX. 
-
 
 ```powershell
-Convert-Tcx2Gpx -Path d:\Trash\Workouts\ -Verbose
+d
 ```
-
-Module first will download **GPSBabel** application which is used to perform conversion. application is stored directly in the GitHub.
 
 <!--og-image-->
 ![Download and extract Babel](Images/DownloadAndExtract.png)
