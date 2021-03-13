@@ -8,7 +8,7 @@ namespace ProductivityTools.TrainingLog.Endomondo.ImportTrainings
     [Cmdlet("Import", "EndomondoTrainingsToTrainingLog")]
     public class ImportTrainingsCmdlet: PSCmdlet.PSCmdletPT
     {
-        [Parameter(Mandatory = true, HelpMessage = "Path to Endomondo backup directory, it should be path to main directory not to WorkOuts subdirectory")]
+        [Parameter(Mandatory = true, HelpMessage = "Path to Endomondo backup directory, it should be path to main directory not to workouts subdirectory")]
         public string Path { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = "Unique string which will point out account. In my case it was my email address.")]
