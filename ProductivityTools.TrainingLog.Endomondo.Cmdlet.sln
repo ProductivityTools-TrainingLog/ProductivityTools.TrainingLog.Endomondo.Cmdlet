@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TrainingLog.Endomondo", "ProductivityTools.TrainingLog.Endomondo\ProductivityTools.TrainingLog.Endomondo.csproj", "{15B89330-F67E-4DA0-BEE4-1634A8E94700}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.TrainingLog.Endomondo.Cmdlet", "ProductivityTools.TrainingLog.Endomondo\ProductivityTools.TrainingLog.Endomondo.Cmdlet.csproj", "{15B89330-F67E-4DA0-BEE4-1634A8E94700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

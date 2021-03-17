@@ -3,7 +3,7 @@
     "ProductivityTools.TrainingLog.Endomondo": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-noexit -command \"import-module d:\\GitHub\\ProductivityTools.TrainingLog.Endomondo\\ProductivityTools.TrainingLog.Endomondo\\bin\\Debug\\netstandard2.0\\ProductivityTools.TrainingLog.Endomondo.dll\""
+      "commandLineArgs": "-noexit -command \"import-module d:\\GitHub\\ProductivityTools.TrainingLog.Endomondo.Cmdlet\\ProductivityTools.TrainingLog.Endomondo\\bin\\Debug\\netstandard2.0\\ProductivityTools.TrainingLog.Endomondo.dll\""
     }
   }
 }

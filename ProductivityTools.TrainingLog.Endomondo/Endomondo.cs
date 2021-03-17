@@ -33,8 +33,14 @@ namespace ProductivityTools.TrainingLog.Endomondo
                     if (json.Contains("points"))
                     {
                         int pointsplace = json.IndexOf("points");
+
+                        var pointsString = json.Substring(pointsplace);
+                        if (pointsString.Contains("latitude"))
+                        {
+                            points = true;
+                        }
+
                         json = json.Substring(0, pointsplace - 2) + "]";
-                        points = true;
                     }
                     if (json.Contains("pictures"))
                     {

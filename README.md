@@ -31,9 +31,15 @@ Training log doesn't allow to import TCX data but GPX data. So to start using th
 After conversion you should have updated **Workouts** directory
 ![EndomodoBackup](Images/EndomondoTrainingsWithGPX.png)
 
+## Module
+
+Module exposes only one command
+
 ```powershell
-d
+Import-EndomondoTrainingsToTrainingLog -Path "d:\trainings" -Account "pwujczyk" -TrainingLogApiAddress "http:\\example.com\"
 ```
+
+- Path - should be given path to full Endomondo backup not to Trainings directory
 
 <!--og-image-->
 ![Download and extract Babel](Images/DownloadAndExtract.png)
