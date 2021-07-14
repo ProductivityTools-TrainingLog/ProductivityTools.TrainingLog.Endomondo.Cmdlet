@@ -40,6 +40,8 @@ Module exposes only one command
 Import-EndomondoTrainingsToTrainingLog -Path "d:\Endomondo\Pawel endomondo-2020-12-08Working\" -Account pwujczyk5 -TrainingLogApiAddress https://localhost:5001 -Verbose
 ```
 
+(without slash after port)
+
 - Path - should be given path to full Endomondo backup not to Trainings directory
 
 ![Import](Images/Import.png)
